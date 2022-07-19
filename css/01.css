@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+h1{
+	text-align: center;
+	padding: 50px 0px;
+}
+h3{
+	text-align: center;
+}
+.list{
+	width: 1470px;
+	height: 1000px;
+	margin: 0 auto;
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.list li{
+	width: 296px;
+	border: solid 1px #ccc;
+	margin: 0px 13px 20px;
+	transition: all 1s;
+	position: relative;
+	top: 0px;
+	
+}
+.list img{
+	width: 266px;
+	margin-left: 15px;
+}
+.line{
+	width: 236px;
+	border-top: solid 2px #999;
+	margin: 3px auto 0px;
+}
+.line2{
+	width: 0px;
+	border-top: solid 2px red;
+	margin: -2px 0px 0px 30px;
+	transition: all 1s;
+}
+.list p{
+	width: 236px;
+	margin:  10px auto 0px;
+	text-align: left;
+	font-size: 14px;
+	line-height: 28px;
+}
+.list span{
+	margin-left: 30px;
+	color: red;
+	font-size: 24px;
+}
+.btn{
+	height: 40px;
+	background-color: #98fb98;
+	text-align: center;
+	line-height: 40px;
+	margin-top: 10px;
+}
+.list li:hover{
+	top: -20px;
+	box-shadow: 0px 0px 10px black;
+}
+.list li:hover h3{
+	color: green;
+}
+.list li:hover .line2{
+	width: 236px;
+}
+.car{
+	position: fixed;
+	top: 102px;
+	right: 30px;
+}
+.car span{
+	color: red;
+	position: absolute;
+	right: 10px;
+	top: -15px;
+}
+.active{
+	position: fixed;
+	top: 0px;
+	left: 0;
+	animation: img1 2s linear;
+}
+@keyframes img1{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(3600deg);}
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/01.css" />
+	</head>
+	<body>
+		<h1>农产品中心</h1>
+		<ul class="list">
+			<li>
+				<img src="img/ia_100000006.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000007.webp" />
+				<h3>西红柿</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000008.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000009.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000010.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000011.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000012.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+			<li>
+				<img src="img/ia_100000013.webp" />
+				<h3>菠萝</h3>
+				<div class="line"></div>
+				<div class="line2"></div>
+				<p>菠萝有很好的食疗保健作用,它含有的菠萝蛋白酶能溶解导致心脏病...</p>
+				<span>&yen;9.99</span>
+				<div class="btn">加入购物车</div>
+			</li>
+		</ul>
+		<div class="car" >
+			<img src="img/_购物车.png" />
+			<span>0</span>
+		</div>
+	</body>
+	<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//jq代码
+		$(function(){
+			var n1 = 0;
+			//获取元素节点
+			console.log($(".btn"));
+			//绑定点击事件
+			$(".btn").click(function(){
+				//创建图片，
+				var img =$("<img />")
+				//图片路径,$(this)指的是事件触发元素
+				img.attr("src",$(this).siblings("img").attr("src"))
+				//把图片插入到页面上
+				$("body").append(img)
+				//设置图片的大小
+				var w = $(this).siblings("img").width()
+				img.css({"width":w});
+				//设置图片相对浏览器窗口的位置
+				var x = $(this).siblings("img").offset().left
+				console.log($(this).siblings("img").offset().top)
+				//滚动条距离顶部的距离
+				var y = $("html,body").scrollTop();
+				console.log($(this).siblings("img").offset().top-y)
+				img.addClass("active")
+				img.css({"top":$(this).siblings("img").offset().top-y,"left":x});
+				//图片飞起来
+				img.animate({
+					width:20,
+					left:$(".car").offset().left+13,
+					top:$(".car").offset().top-y+10
+				},2000,function(){
+					img.remove();
+					n1++;
+					$(".car span").html(n1);
+				})
+			})
+		})
+	</script>
+</html>
